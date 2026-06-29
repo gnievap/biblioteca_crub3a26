@@ -70,10 +70,7 @@ def eliminar_libro():
         print(f"Error al eliminar el libro {id}")
         print(e)
 
-
-def main():
-    print("=== BIBLIOTECA UNIVERSITARIA ===")
-    print("Menú de opciones")
+def menu_libros():
     print("1. Ver todos los libros")
     print("2. Insertar un nuevo libro")
     print("3. Actualizar un libro disponible")
@@ -89,6 +86,38 @@ def main():
             actualizar_libro()
         case 4: 
             eliminar_libro()
+
+def menu_usuarios():
+    print("1. Ver todos los usuarios")
+    print("2. Insertar un nuevo usuario")
+    print("3. Actualizar un usuario existente")
+    print("4. Eliminar un usuario existente")
+    opcion = int(input("Selecciona una opción (1-4): "))
+
+    match opcion:
+        case 1:
+            ver_usuarios()
+        case 2:
+            insertar_usuario()
+        case 3: 
+            actualizar_usuario()
+        case 4: 
+            eliminar_usuario()
+
+
+def main():
+    print("=== BIBLIOTECA UNIVERSITARIA ===")
+    print("Menú de opciones")
+    print("1. Libros")
+    print("2. Usuarios")
+    opcion = int(input("Selecciona una opción (1-2): "))
+    match opcion:
+        case 1:
+            menu_libros()
+        case 2:
+            menu_usuarios()
+
+    
 
 
 
